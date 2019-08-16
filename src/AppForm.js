@@ -4,19 +4,44 @@ import * as Yup from 'yup'
 
 const AppForm = ({ errors, touched, values }) => {
   return (
-    <div>
+    <div className='form-container'>
+      <h1>Sign Up</h1>
+
       <Form>
-        <Field type='name' name='name' placeholder='Name' />
-        {touched.name && errors.name && <p>{errors.name}</p>}
-        <Field type='email' name='email' placeholder='Email' />
-        {touched.email && errors.email && <p>{errors.email}</p>}
-        <Field type='password' name='password' placeholder='Password' />
-        {touched.password && errors.password && <p>{errors.password}</p>}
-        <label>
-          <Field type='checkbox' name='term' checked={values.term} />I agree to
-          the Terms and Conditions
+        <Field
+          type='name'
+          name='name'
+          placeholder='Name'
+          autoComplete='new-name'
+          className='input'
+        />
+        {touched.name && errors.name && <p className='error'>{errors.name}</p>}
+        <Field
+          type='email'
+          name='email'
+          placeholder='Email'
+          className='input'
+        />
+        {touched.email && errors.email && (
+          <p className='error'>{errors.email}</p>
+        )}
+        <Field
+          type='password'
+          name='password'
+          autoComplete='new-password'
+          placeholder='Password'
+          className='input'
+        />
+        {touched.password && errors.password && (
+          <p className='error'>{errors.password}</p>
+        )}
+        <label className='term'>
+          <Field type='checkbox' name='term' checked={values.term} /> I agree to
+          the <a href='#'>Terms and Conditions</a>
         </label>
-        <button type='submit'>Submit</button>
+        <button type='submit' className='submit'>
+          Submit
+        </button>
       </Form>
     </div>
   )
