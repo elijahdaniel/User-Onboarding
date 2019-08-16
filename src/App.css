@@ -1,1 +1,6 @@
-
+Form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    padding: 50px;
+}
