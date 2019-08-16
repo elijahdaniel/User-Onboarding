@@ -37,7 +37,7 @@ const AppForm = ({ errors, touched, values }) => {
         )}
         <label className='term'>
           <Field type='checkbox' name='term' checked={values.term} /> I agree to
-          the <a href='#'>Terms and Conditions</a>
+          the <a href='https://github.com/elijahdaniel'>Terms and Conditions</a>
         </label>
         <button type='submit' className='submit'>
           Submit
